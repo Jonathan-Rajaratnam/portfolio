@@ -11,6 +11,7 @@ import {
 	SiGit,
 	SiMysql,
 	SiAngular,
+	SiRedhat,
 } from "react-icons/si";
 
 interface Skill {
@@ -33,6 +34,7 @@ interface IconColors {
 
 const iconColors: IconColors = {
 	HTML: "#E34F26",
+	RedHat: "#EE0000",
 	CSS: "#1572B6",
 	JavaScript: "#F7DF1E",
 	React: "#61DAFB",
@@ -58,17 +60,13 @@ const skills: Skill[] = [
 	{ name: "React", icon: <SiReact />, category: "frontend" },
 	{
 		name: "Flutter",
-		icon: <img src="/logo/icon_flutter.svg" className="w-12 h-full" />,
+		icon: <img src="/logo/icon_flutter.svg" className="w-14 h-14" />,
 		category: "frontend",
 	},
 	{
 		name: "VueJS",
 		icon: (
-			<img
-				src="/logo/vue_logo.svg"
-				alt="VueJS"
-				className="w-full h-full"
-			/>
+			<img src="/logo/vue_logo.svg" alt="VueJS" className="w-14 h-14" />
 		),
 		category: "frontend",
 	},
@@ -76,23 +74,24 @@ const skills: Skill[] = [
 	{ name: "TypeScript", icon: <SiTypescript />, category: "backend" },
 	{
 		name: "Express",
-		icon: <img src="/logo/express-dark.svg" className="w-full h-full" />,
+		icon: <img src="/logo/express-dark.svg" className="w-14 h-14" />,
 		category: "backend",
 	},
 	{
 		name: "Dart",
-		icon: <img src="/logo/dart.svg" className="w-full h-full" />,
+		icon: <img src="/logo/dart.svg" className="w-14 h-14" />,
 		category: "backend",
 	},
 	{
 		name: "Python",
-		icon: <img src="/logo/python-logo.svg" className="w-full h-full" />,
+		icon: <img src="/logo/python-logo.svg" className="w-14 h-full" />,
 		category: "backend",
 	},
 	{ name: "MongoDB", icon: <SiMongodb />, category: "database" },
 	{ name: "MySQL", icon: <SiMysql />, category: "database" },
 	{ name: "Docker", icon: <SiDocker />, category: "devops" },
 	{ name: "Kubernetes", icon: <SiKubernetes />, category: "devops" },
+	{ name: "RedHat", icon: <SiRedhat />, category: "devops" },
 	{
 		name: "Bash",
 		icon: <img src="/logo/bash.svg" className="w-full h-full" />,

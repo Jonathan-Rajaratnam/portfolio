@@ -7,6 +7,7 @@ export const HeroSection = () => {
 		"Bookworm",
 		"Cloud Enthusiast",
 		"Machine Learning Engineer",
+		"Gamer",
 	];
 
 	return (
@@ -28,12 +29,14 @@ export const HeroSection = () => {
 					</h1>
 
 					{/* Add the TypeWriter component */}
-					<h2 className="text-2xl md:text-3xl font-semibold opacity-0 animate-fade-in-delay-3">
-						I'm a{" "}
-						<TypeWriter
-							words={roles}
-							className="text-primary inline-block min-w-[200px] text-left"
-						/>
+					<h2 className="text-2xl md:text-2xl flex flex-col sm:flex-row font-semibold opacity-0 animate-fade-in-delay-3 items-center justify-center">
+						<span>I'm a</span>{" "}
+						<div className="w-full sm:w-auto flex justify-center sm:justify-start">
+							<TypeWriter
+								words={roles}
+								className="text-primary text-center sm:text-left text-lg md:text-2xl sm:ml-2 w-[180px] sm:w-auto"
+							/>
+						</div>
 					</h2>
 
 					<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">

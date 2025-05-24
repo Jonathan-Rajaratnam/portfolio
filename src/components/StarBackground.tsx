@@ -21,19 +21,57 @@ interface Meteor {
 export const StarBackground = () => {
 	const [stars, setStars] = useState<Star[]>([]);
 	const [meteors, setMeteors] = useState<Meteor[]>([]);
+	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	useEffect(() => {
-		generateStars();
-		generateMeteors();
+		// Initially set the dark mode state based on the theme
+		setIsDarkMode(document.documentElement.classList.contains("dark"));
+
+		// Generate stars and meteors if in dark mode
+		if (document.documentElement.classList.contains("dark")) {
+			generateStars();
+			generateMeteors();
+		}
+
+		// Set up mutation observer to watch for theme changes
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (
+					mutation.type === "attributes" &&
+					mutation.attributeName === "class" &&
+					mutation.target === document.documentElement
+				) {
+					const isDark =
+						document.documentElement.classList.contains("dark");
+					setIsDarkMode(isDark);
+
+					if (isDark) {
+						// Generate stars and meteors when switching to dark mode
+						generateStars();
+						generateMeteors();
+					} else {
+						// Clear stars and meteors when switching to light mode
+						setStars([]);
+						setMeteors([]);
+					}
+				}
+			});
+		});
+
+		observer.observe(document.documentElement, { attributes: true });
 
 		const handleResize = () => {
-			generateStars();
+			if (isDarkMode) {
+				generateStars();
+			}
 		};
 		window.addEventListener("resize", handleResize);
+
 		return () => {
 			window.removeEventListener("resize", handleResize);
+			observer.disconnect();
 		};
-	}, []);
+	}, [isDarkMode]);
 
 	const generateStars = () => {
 		const noOfStars = Math.floor(
@@ -71,6 +109,10 @@ export const StarBackground = () => {
 		}
 		setMeteors(newMeteors);
 	};
+
+	if (!isDarkMode) {
+		return null;
+	}
 
 	return (
 		<div className="fixed inset-0 overflow-hidden pointer-events-none z-0">

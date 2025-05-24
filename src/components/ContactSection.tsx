@@ -35,84 +35,87 @@ export const ContactSection = () => {
 				<h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
 					Get In <span className="text-primary ">Touch</span>
 				</h2>
-				<p className="text-centered text-muted-foreground mb-12 max-w-2xl mx-auto"></p>
+				<p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+					Feel free to reach out with any questions or opportunities.
+				</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-					<div className="space-y-8">
+					<div className="space-y-8 mt-10">
 						<h3 className="text-2xl font-semibold mb-6">
-							Contact Information
+							<span className="text-primary">Contact</span>{" "}
+							Information
 						</h3>
 
 						{/* Email Section */}
-						<div className="space-y-6">
-							<div className="flex items-center space-x-4">
-								<div className="p-3 rounded-full bg-primary/10">
-									<Mail className="h-6 w-6 text-primary" />
+						<div className="text-center mb-6 ml-16">
+							<div className="flex items-center justify-start max-w-xs mx-auto">
+								<div className="flex items-center justify-end w-12">
+									<Mail className="h-5 w-5 text-primary" />
 								</div>
-								{/* Center align the content */}
-								<div className="font-medium flex-grow text-center">
-									<h4>Email</h4>
+								<div className="ml-4 text-left">
 									<a
 										href="mailto:joeraj08@gmail.com"
 										className="text-muted-foreground hover:text-primary transition-colors duration-300">
 										joeraj08@gmail.com
 									</a>
 								</div>
-								{/* Add an invisible element to balance the layout */}
-								<div className="w-[52px] flex-shrink-0"></div>
 							</div>
 						</div>
 
-						<div className="space-y-6 justify-center">
-							<div className="flex items-center space-x-4">
-								<div className="p-3 rounded-full bg-primary/10">
-									<Phone className="h-6 w-6 text-primary" />
+						{/* Phone Section */}
+						<div className="text-center mb-6 ml-16">
+							<div className="flex items-center justify-start max-w-xs mx-auto">
+								<div className="flex items-center justify-end w-12">
+									<Phone className="h-5 w-5 text-primary" />
 								</div>
-								{/* Center align the content */}
-								<div className="font-medium flex-grow text-center">
-									<h4>Phone</h4>
+								<div className="ml-4 text-left">
 									<a
 										href="tel:+947629364"
 										className="text-muted-foreground hover:text-primary transition-colors duration-300">
 										076 293 6764
 									</a>
 								</div>
-								{/* Add an invisible element to balance the layout */}
-								<div className="w-[52px] flex-shrink-0"></div>
 							</div>
 						</div>
 
-						<div className="space-y-6 justify-center">
-							<div className="flex items-center space-x-4">
-								<div className="p-3 rounded-full bg-primary/10">
-									<MapPin className="h-6 w-6 text-primary" />
+						{/* Location Section */}
+						<div className="text-center mb-6 ml-16">
+							<div className="flex items-center justify-start max-w-xs mx-auto">
+								<div className="flex items-center justify-end w-12">
+									<MapPin className="h-5 w-5 text-primary" />
 								</div>
-								{/* Center align the content */}
-								<div className="font-medium flex-grow text-center">
-									<h4>Location</h4>
+								<div className="ml-4 text-left">
 									<span className="text-muted-foreground">
 										Colombo, Sri Lanka
 									</span>
 								</div>
-								{/* Add an invisible element to balance the layout */}
-								<div className="w-[52px] flex-shrink-0"></div>
 							</div>
 						</div>
 
+						{/* Social Links */}
 						<div className="pt-8">
 							<h4 className="font-medium mb-4">
 								Connect With Me
 							</h4>
 							<div className="flex space-x-4 justify-center">
-								<a href="" target="_blank">
+								<a
+									href="https://www.linkedin.com/in/jonathan-rajaratnam-52323a218/"
+									target="_blank"
+									rel="noopener noreferrer">
 									<Linkedin />
 								</a>
-								<a href="" target="_blank">
+								<a
+									href="https://github.com/Jonathan-Rajaratnam"
+									target="_blank"
+									rel="noopener noreferrer">
 									<Github />
 								</a>
 								<a href="" target="_blank">
 									<Instagram />
 								</a>
-								<a href="" target="_blank">
+								<a
+									href="https://x.com/itzmejohnny8"
+									target="_blank"
+									rel="noopener noreferrer">
 									<Twitter />
 								</a>
 							</div>
@@ -135,7 +138,7 @@ export const ContactSection = () => {
 									id="name"
 									name="name"
 									required
-									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
 									placeholder="Jonathan Rajaratnam"
 								/>
 							</div>
@@ -150,7 +153,7 @@ export const ContactSection = () => {
 									id="email"
 									name="email"
 									required
-									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
 									placeholder="joeraj08@gmail.com"
 								/>
 							</div>
@@ -164,9 +167,9 @@ export const ContactSection = () => {
 									id="message"
 									name="message"
 									required
-									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+									className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
 									placeholder="Your message here..."
-									rows={2}
+									rows={3}
 								/>
 							</div>
 							<button
