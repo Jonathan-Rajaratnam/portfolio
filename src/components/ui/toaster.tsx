@@ -1,4 +1,3 @@
-import { useToast } from "../../hooks/useToast.ts";
 import {
 	Toast,
 	ToastClose,
@@ -6,7 +5,8 @@ import {
 	ToastProvider,
 	ToastTitle,
 	ToastViewport,
-} from "./toast.tsx";
+} from "./toast"; // Import your toast components
+import { useToast } from "../../hooks/useToast.ts"; // Import your custom hook
 
 export function Toaster() {
 	const { toasts } = useToast();

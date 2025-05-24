@@ -13,7 +13,25 @@ import {
 	SiAngular,
 } from "react-icons/si";
 
-const iconColors = {
+interface Skill {
+	name: string;
+	icon: React.ReactNode;
+	category: string;
+}
+interface GroupedSkills {
+	frontend?: Skill[];
+	backend?: Skill[];
+	database?: Skill[];
+	devops?: Skill[];
+	tools?: Skill[];
+	[key: string]: Skill[] | undefined;
+}
+
+interface IconColors {
+	[key: string]: string;
+}
+
+const iconColors: IconColors = {
 	HTML: "#E34F26",
 	CSS: "#1572B6",
 	JavaScript: "#F7DF1E",
@@ -32,7 +50,7 @@ const iconColors = {
 	PostgreSQL: "#336791",
 };
 
-const skills = [
+const skills: Skill[] = [
 	{ name: "HTML", icon: <SiHtml5 />, category: "frontend" },
 	{ name: "CSS", icon: <SiCss3 />, category: "frontend" },
 	{ name: "JavaScript", icon: <SiJavascript />, category: "frontend" },
@@ -58,9 +76,7 @@ const skills = [
 	{ name: "TypeScript", icon: <SiTypescript />, category: "backend" },
 	{
 		name: "Express",
-		icon: (
-			<img src="public/logo/express-dark.svg" className="w-full h-full" />
-		),
+		icon: <img src="/logo/express-dark.svg" className="w-full h-full" />,
 		category: "backend",
 	},
 	{
@@ -108,13 +124,16 @@ const skills = [
 ];
 
 export const SkillsSection = () => {
-	const groupedSkills = skills.reduce((acc, skill) => {
-		if (!acc[skill.category]) {
-			acc[skill.category] = [];
-		}
-		acc[skill.category].push(skill);
-		return acc;
-	}, {});
+	const groupedSkills: GroupedSkills = skills.reduce(
+		(acc: GroupedSkills, skill: Skill) => {
+			if (!acc[skill.category]) {
+				acc[skill.category] = [];
+			}
+			acc[skill.category]?.push(skill);
+			return acc;
+		},
+		{}
+	);
 
 	// Reorganize skills into these categories
 	const displayCategories = {
