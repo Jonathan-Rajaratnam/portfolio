@@ -33,7 +33,7 @@ export const AboutSection = () => {
 							</a>
 
 							<a
-								href=""
+								href="/documents/resume.pdf"
 								className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
 								Download CV
 							</a>
@@ -48,12 +48,12 @@ export const AboutSection = () => {
 								</div>
 								<div className="text-left">
 									<h4 className="font-semibold text-lg">
-										Full Stack Development
+										Back End Development
 									</h4>
 									<p className="text-muted-foreground">
-										I specialize in creating dynamic and
-										responsive web applications using the
-										latest technologies.
+										I specialize in building robust and
+										scalable backend systems using modern
+										technologies.
 									</p>
 								</div>
 							</div>

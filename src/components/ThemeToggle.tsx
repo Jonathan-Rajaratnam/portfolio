@@ -2,7 +2,17 @@ import { useState, useEffect } from "react";
 import { cn } from "../lib/utils";
 import { Sun, Moon } from "lucide-react";
 
-export const ThemeToggle = () => {
+interface ThemeToggleProps {
+	className?: string;
+	size?: number;
+	inline?: boolean;
+}
+
+export const ThemeToggle = ({
+	className,
+	size = 24,
+	inline = false,
+}: ThemeToggleProps) => {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 	const [isTransitioning, setIsTransitioning] = useState(false);
@@ -50,18 +60,31 @@ export const ThemeToggle = () => {
 
 	if (!isMounted) return null;
 
+	const baseClasses = "transition-all duration-500 focus:outline-hidden";
+	const defaultClasses = inline
+		? "p-2 text-foreground z-50"
+		: "fixed z-[60] top-5 right-5 rounded-full";
+
 	return (
 		<button
 			onClick={toggleTheme}
-			className={cn(
-				"fixed max-sm:hidden top-5 right-5 z-50 rounded-full transition-all duration-500",
-				"focus:outlin-hidden"
-			)}>
-			<div className="relative w-6 h-6 transition-transform duration-500">
+			className={cn(baseClasses, defaultClasses, className)}
+			aria-label="Toggle theme">
+			<div
+				className={`relative transition-transform duration-500`}
+				style={{ width: size, height: size }}>
 				{isDarkMode ? (
-					<Sun className="absolute inset-0 h-6 w-6 text-yellow-300 animate-spin-slow" />
+					<Sun
+						className={`absolute inset-0 text-yellow-300 ${
+							inline ? "" : "animate-spin-slow"
+						}`}
+						size={size}
+					/>
 				) : (
-					<Moon className="absolute inset-0 h-6 w-6 text-blue-900" />
+					<Moon
+						className="absolute inset-0 text-blue-900"
+						size={size}
+					/>
 				)}
 			</div>
 		</button>
