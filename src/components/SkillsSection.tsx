@@ -60,13 +60,23 @@ const skills: Skill[] = [
 	{ name: "React", icon: <SiReact />, category: "frontend" },
 	{
 		name: "Flutter",
-		icon: <img src="/logo/icon_flutter.svg" className="w-14 h-14" />,
+		icon: (
+			<img
+				src="/logo/icon_flutter.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="Flutter"
+			/>
+		),
 		category: "frontend",
 	},
 	{
 		name: "VueJS",
 		icon: (
-			<img src="/logo/vue_logo.svg" alt="VueJS" className="w-14 h-14" />
+			<img
+				src="/logo/vue_logo.svg"
+				alt="VueJS"
+				className="w-8 h-8 md:w-12 md:h-12"
+			/>
 		),
 		category: "frontend",
 	},
@@ -74,17 +84,35 @@ const skills: Skill[] = [
 	{ name: "TypeScript", icon: <SiTypescript />, category: "backend" },
 	{
 		name: "Express",
-		icon: <img src="/logo/express-dark.svg" className="w-14 h-14" />,
+		icon: (
+			<img
+				src="/logo/express-dark.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="Express"
+			/>
+		),
 		category: "backend",
 	},
 	{
 		name: "Dart",
-		icon: <img src="/logo/dart.svg" className="w-14 h-14" />,
+		icon: (
+			<img
+				src="/logo/dart.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="Dart"
+			/>
+		),
 		category: "backend",
 	},
 	{
 		name: "Python",
-		icon: <img src="/logo/python-logo.svg" className="w-14 h-full" />,
+		icon: (
+			<img
+				src="/logo/python-logo.svg"
+				className="w-8 h-10 md:w-12 md:h-14"
+				alt="Python"
+			/>
+		),
 		category: "backend",
 	},
 	{ name: "MongoDB", icon: <SiMongodb />, category: "database" },
@@ -94,30 +122,58 @@ const skills: Skill[] = [
 	{ name: "RedHat", icon: <SiRedhat />, category: "devops" },
 	{
 		name: "Bash",
-		icon: <img src="/logo/bash.svg" className="w-full h-full" />,
+		icon: (
+			<img
+				src="/logo/bash.svg"
+				className="w-10 h-10 md:w-14 md:h-14"
+				alt="Bash"
+			/>
+		),
 		category: "devops",
 	},
 	{ name: "Git", icon: <SiGit />, category: "tools" },
 	{
 		name: "VSCode",
 		category: "tools",
-		icon: <img src="/logo/vscode.svg" className="w-full h-full" />,
+		icon: (
+			<img
+				src="/logo/vscode.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="VSCode"
+			/>
+		),
 	},
 	{
 		name: "PyCharm",
-		icon: <img src="/logo/PyCharm_icon.svg" className="w-full h-full" />,
+		icon: (
+			<img
+				src="/logo/PyCharm_icon.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="PyCharm"
+			/>
+		),
 		category: "tools",
 	},
 	{
 		name: "IntelliJ",
 		icon: (
-			<img src="/logo/IntelliJ_IDEA_icon.svg" className="w-full h-full" />
+			<img
+				src="/logo/IntelliJ_IDEA_icon.svg"
+				className="w-8 h-8 md:w-12 md:h-12"
+				alt="IntelliJ"
+			/>
 		),
 		category: "tools",
 	},
 	{
 		name: "Postman",
-		icon: <img src="/logo/postman.svg" className="w-full h-full" />,
+		icon: (
+			<img
+				src="/logo/postman.svg"
+				className="w-10 h-10 md:w-14 md:h-14"
+				alt="Postman"
+			/>
+		),
 		category: "tools",
 	},
 ];
@@ -175,21 +231,30 @@ export const SkillsSection = () => {
 									{categorySkills.map((skill, index) => (
 										<div
 											key={skill.name}
-											className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col items-center opacity-0 animate-fade-in w-28 h-28"
+											className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col items-center opacity-0 animate-fade-in w-20 h-20 md:w-28 md:h-28 relative group/skill"
 											style={{
 												animationDelay: `${
 													index * 0.1
 												}s`,
 											}}>
 											{/* Icon with original brand color */}
-											<div
-												className="text-4xl flex-grow flex items-center md:text-6xl mb-4"
-												style={{
-													color: iconColors[
-														skill.name
-													],
-												}}>
-												{skill.icon}
+											{/* Icon with consistent sizing */}
+											<div className="flex-grow flex items-center justify-center">
+												<div
+													className="text-4xl md:text-5xl flex items-center justify-center"
+													style={{
+														color: iconColors[
+															skill.name
+														],
+													}}>
+													{skill.icon}
+												</div>
+											</div>
+
+											{/* Tooltip */}
+											<div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-2 px-3 rounded-md opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+												{skill.name}
+												<div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
 											</div>
 										</div>
 									))}

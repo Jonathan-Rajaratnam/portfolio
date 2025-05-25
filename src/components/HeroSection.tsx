@@ -29,12 +29,12 @@ export const HeroSection = () => {
 					</h1>
 
 					{/* Add the TypeWriter component */}
-					<h2 className="text-2xl md:text-2xl flex flex-col sm:flex-row font-semibold opacity-0 animate-fade-in-delay-3 items-center justify-center">
+					<h2 className="text-3xl md:text-4xl flex flex-col sm:flex-row font-semibold opacity-0 animate-fade-in-delay-3 items-center justify-center">
 						<span>I'm a</span>{" "}
 						<div className="w-full sm:w-auto flex justify-center sm:justify-start">
 							<TypeWriter
 								words={roles}
-								className="text-primary text-center sm:text-left text-lg md:text-2xl sm:ml-2 w-[180px] sm:w-auto"
+								className="text-primary text-center sm:text-left text-2xl md:text-4xl sm:ml-2 w-[250px] sm:w-auto"
 							/>
 						</div>
 					</h2>
