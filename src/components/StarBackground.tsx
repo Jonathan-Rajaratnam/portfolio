@@ -22,16 +22,18 @@ export const StarBackground = () => {
 	const [stars, setStars] = useState<Star[]>([]);
 	const [meteors, setMeteors] = useState<Meteor[]>([]);
 	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [lastWindowSize, setLastWindowSize] = useState({
+		width: 0,
+		height: 0,
+	});
 
 	useEffect(() => {
 		// Initially set the dark mode state based on the theme
 		setIsDarkMode(document.documentElement.classList.contains("dark"));
 
 		// Generate stars and meteors if in dark mode
-		if (document.documentElement.classList.contains("dark")) {
-			generateStars();
-			generateMeteors();
-		}
+		generateStars();
+		generateMeteors();
 
 		// Set up mutation observer to watch for theme changes
 		const observer = new MutationObserver((mutations) => {
@@ -44,16 +46,6 @@ export const StarBackground = () => {
 					const isDark =
 						document.documentElement.classList.contains("dark");
 					setIsDarkMode(isDark);
-
-					if (isDark) {
-						// Generate stars and meteors when switching to dark mode
-						generateStars();
-						generateMeteors();
-					} else {
-						// Clear stars and meteors when switching to light mode
-						setStars([]);
-						setMeteors([]);
-					}
 				}
 			});
 		});
@@ -61,7 +53,19 @@ export const StarBackground = () => {
 		observer.observe(document.documentElement, { attributes: true });
 
 		const handleResize = () => {
-			if (isDarkMode) {
+			const currentWidth = window.innerWidth;
+			const currentHeight = window.innerHeight;
+
+			// Only regenerate stars if there's a significant size change (not just mobile scrolling)
+			const widthDiff = Math.abs(currentWidth - lastWindowSize.width);
+			const heightDiff = Math.abs(currentHeight - lastWindowSize.height);
+
+			// Threshold of 50px to avoid regeneration on minor mobile viewport changes
+			if (widthDiff > 50 || heightDiff > 50) {
+				setLastWindowSize({
+					width: currentWidth,
+					height: currentHeight,
+				});
 				generateStars();
 			}
 		};
@@ -71,7 +75,7 @@ export const StarBackground = () => {
 			window.removeEventListener("resize", handleResize);
 			observer.disconnect();
 		};
-	}, [isDarkMode]);
+	}, []);
 
 	const generateStars = () => {
 		const noOfStars = Math.floor(

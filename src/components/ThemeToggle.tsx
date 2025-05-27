@@ -47,20 +47,20 @@ export const ThemeToggle = ({
 			setTimeout(() => {
 				setIsDarkMode(false);
 				setIsTransitioning(false);
-			}, 350);
+			}, 300);
 		} else {
 			document.documentElement.classList.add("dark");
 			localStorage.setItem("theme", "dark");
 			setTimeout(() => {
 				setIsDarkMode(true);
 				setIsTransitioning(false);
-			}, 350);
+			}, 300);
 		}
 	};
 
 	if (!isMounted) return null;
 
-	const baseClasses = "transition-all duration-500 focus:outline-hidden";
+	const baseClasses = "focus:outline-hidden";
 	const defaultClasses = inline
 		? "p-2 text-foreground z-50"
 		: "fixed z-[60] top-5 right-5 rounded-full";

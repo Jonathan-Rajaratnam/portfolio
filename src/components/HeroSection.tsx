@@ -40,9 +40,17 @@ export const HeroSection = () => {
 					</h2>
 
 					<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">
-						I'm a software engineer with a passion for building
-						innovative solutions. I specialize in backend
-						development, cloud computing, and DevOps.
+						I'm a software engineer with a strong focus on building
+						scalable, high-quality web applications. Over the past
+						three years, I have worked extensively with back-end
+						technologies like Node.js, Express, and databases
+						including MySQL and MongoDB.
+					</p>
+					<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">
+						With a strong foundation in computer science and a keen
+						interest in emerging technologies, I strive to create
+						efficient, scalable, and user-friendly applications that
+						solve real-world problems.
 					</p>
 					<div className="opacity-0 animate-fade-in-delay-5">
 						<a href="#projects" className="cosmic-button">

@@ -45,13 +45,14 @@ export const ContactSection = () => {
 							Information
 						</h3>
 
-						{/* Email Section */}
-						<div className="text-center mb-6 ml-16">
-							<div className="flex items-center justify-start max-w-xs mx-auto">
-								<div className="flex items-center justify-end w-12">
-									<Mail className="h-5 w-5 text-primary" />
-								</div>
-								<div className="ml-4 text-left">
+						{/* Contact Information Items */}
+						<div className="space-y-6">
+							{/* Email Section */}
+							<div className="flex items-center justify-center">
+								<div className="flex items-center w-50">
+									<div className="w-6 flex justify-center mr-4">
+										<Mail className="h-5 w-5 text-primary" />
+									</div>
 									<a
 										href="mailto:joeraj08@gmail.com"
 										className="text-muted-foreground hover:text-primary transition-colors duration-300">
@@ -59,15 +60,13 @@ export const ContactSection = () => {
 									</a>
 								</div>
 							</div>
-						</div>
 
-						{/* Phone Section */}
-						<div className="text-center mb-6 ml-16">
-							<div className="flex items-center justify-start max-w-xs mx-auto">
-								<div className="flex items-center justify-end w-12">
-									<Phone className="h-5 w-5 text-primary" />
-								</div>
-								<div className="ml-4 text-left">
+							{/* Phone Section */}
+							<div className="flex items-center justify-center">
+								<div className="flex items-center w-50">
+									<div className="w-6 flex justify-center mr-4">
+										<Phone className="h-5 w-5 text-primary" />
+									</div>
 									<a
 										href="tel:+947629364"
 										className="text-muted-foreground hover:text-primary transition-colors duration-300">
@@ -75,15 +74,13 @@ export const ContactSection = () => {
 									</a>
 								</div>
 							</div>
-						</div>
 
-						{/* Location Section */}
-						<div className="text-center mb-6 ml-16">
-							<div className="flex items-center justify-start max-w-xs mx-auto">
-								<div className="flex items-center justify-end w-12">
-									<MapPin className="h-5 w-5 text-primary" />
-								</div>
-								<div className="ml-4 text-left">
+							{/* Location Section */}
+							<div className="flex items-center justify-center">
+								<div className="flex items-center w-50">
+									<div className="w-6 flex justify-center mr-4">
+										<MapPin className="h-5 w-5 text-primary" />
+									</div>
 									<span className="text-muted-foreground">
 										Colombo, Sri Lanka
 									</span>
@@ -92,31 +89,37 @@ export const ContactSection = () => {
 						</div>
 
 						{/* Social Links */}
-						<div className="pt-8">
-							<h4 className="font-medium mb-4">
+						<div className="pt-8 text-center mr-4">
+							<h4 className="font-medium text-xl mb-4">
 								Connect With Me
 							</h4>
 							<div className="flex space-x-4 justify-center">
 								<a
 									href="https://www.linkedin.com/in/jonathan-rajaratnam-52323a218/"
 									target="_blank"
-									rel="noopener noreferrer">
-									<Linkedin />
+									rel="noopener noreferrer"
+									className="text-muted-foreground hover:text-primary transition-colors duration-300">
+									<Linkedin className="h-5 w-5" />
 								</a>
 								<a
 									href="https://github.com/Jonathan-Rajaratnam"
 									target="_blank"
-									rel="noopener noreferrer">
-									<Github />
+									rel="noopener noreferrer"
+									className="text-muted-foreground hover:text-primary transition-colors duration-300">
+									<Github className="h-5 w-5" />
 								</a>
-								<a href="" target="_blank">
-									<Instagram />
+								<a
+									href=""
+									target="_blank"
+									className="text-muted-foreground hover:text-primary transition-colors duration-300">
+									<Instagram className="h-5 w-5" />
 								</a>
 								<a
 									href="https://x.com/itzmejohnny8"
 									target="_blank"
-									rel="noopener noreferrer">
-									<Twitter />
+									rel="noopener noreferrer"
+									className="text-muted-foreground hover:text-primary transition-colors duration-300">
+									<Twitter className="h-5 w-5" />
 								</a>
 							</div>
 						</div>

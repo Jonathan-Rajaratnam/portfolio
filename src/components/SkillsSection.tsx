@@ -12,6 +12,10 @@ import {
 	SiMysql,
 	SiAngular,
 	SiRedhat,
+	SiExpress,
+	SiPostman,
+	SiGnubash,
+	SiSwagger,
 } from "react-icons/si";
 
 interface Skill {
@@ -39,7 +43,6 @@ const iconColors: IconColors = {
 	JavaScript: "#F7DF1E",
 	React: "#61DAFB",
 	"Node.js": "#339933",
-	Express: "#FFFFFF",
 	TypeScript: "#3178C6",
 	MongoDB: "#47A248",
 	Python: "#3776AB",
@@ -49,7 +52,7 @@ const iconColors: IconColors = {
 	MySQL: "#4479A1",
 	PyCharm: "#FCF84A",
 	Postman: "#FF6C37",
-	PostgreSQL: "#336791",
+	Swagger: "#85EA2D",
 };
 
 const skills: Skill[] = [
@@ -80,15 +83,21 @@ const skills: Skill[] = [
 		),
 		category: "frontend",
 	},
+
 	{ name: "Node.js", icon: <SiNodedotjs />, category: "backend" },
 	{ name: "TypeScript", icon: <SiTypescript />, category: "backend" },
 	{
 		name: "Express",
+		icon: <SiExpress />,
+		category: "backend",
+	},
+	{
+		name: "Java",
 		icon: (
 			<img
-				src="/logo/express-dark.svg"
-				className="w-8 h-8 md:w-12 md:h-12"
-				alt="Express"
+				src="/logo/java-icon.svg"
+				className="w-8 h-8 md:w-14 md:h-14"
+				alt="Dart"
 			/>
 		),
 		category: "backend",
@@ -122,16 +131,12 @@ const skills: Skill[] = [
 	{ name: "RedHat", icon: <SiRedhat />, category: "devops" },
 	{
 		name: "Bash",
-		icon: (
-			<img
-				src="/logo/bash.svg"
-				className="w-10 h-10 md:w-14 md:h-14"
-				alt="Bash"
-			/>
-		),
+		icon: <SiGnubash />,
 		category: "devops",
 	},
 	{ name: "Git", icon: <SiGit />, category: "tools" },
+	{ name: "Swagger", icon: <SiSwagger />, category: "tools" },
+
 	{
 		name: "VSCode",
 		category: "tools",
@@ -167,15 +172,20 @@ const skills: Skill[] = [
 	},
 	{
 		name: "Postman",
-		icon: (
-			<img
-				src="/logo/postman.svg"
-				className="w-10 h-10 md:w-14 md:h-14"
-				alt="Postman"
-			/>
-		),
+		icon: <SiPostman />,
 		category: "tools",
 	},
+	// {
+	// 	name: "Postman",
+	// 	icon: (
+	// 		<img
+	// 			src="/logo/postman.svg"
+	// 			className="w-10 h-10 md:w-14 md:h-14"
+	// 			alt="Postman"
+	// 		/>
+	// 	),
+	// 	category: "tools",
+	// },
 ];
 
 export const SkillsSection = () => {
@@ -213,7 +223,7 @@ export const SkillsSection = () => {
 	return (
 		<section id="skills" className="py-24 px-4 relative">
 			<div className="container mx-auto max-w-6xl">
-				<h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+				<h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-foreground">
 					My <span className="text-primary">Skills</span>
 				</h2>
 
@@ -252,7 +262,7 @@ export const SkillsSection = () => {
 											</div>
 
 											{/* Tooltip */}
-											<div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-2 px-3 rounded-md opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+											<div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-2 px-3 rounded-md opacity-0 group-hover/skill:opacity-100 pointer-events-none whitespace-nowrap z-10 shadow-lg">
 												{skill.name}
 												<div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
 											</div>

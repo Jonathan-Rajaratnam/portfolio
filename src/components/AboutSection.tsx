@@ -10,21 +10,21 @@ export const AboutSection = () => {
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 					<div className="space-y-6">
 						<h3 className="text-2xl font-semibold">
-							Passionate Backend Developer
+							Passionate Full-Stack Developer
 						</h3>
 						<p className="text-muted-foreground">
-							I am a passionate backend developer with a strong
+							I am a passionate full stack developer with a strong
 							background in building scalable and efficient web
 							applications. I have experience in various
 							technologies and frameworks, and I am always eager
 							to learn new skills and improve my craft.
 						</p>
 						<p className="text-muted-foreground">
-							I am a passionate backend developer with a strong
-							background in building scalable and efficient web
-							applications. I have experience in various
-							technologies and frameworks, and I am always eager
-							to learn new skills and improve my craft.
+							I am also passionate about Dev Ops practices,
+							ensuring smooth deployment and maintenance of
+							applications. My goal is to create high-quality,
+							user-friendly applications that solve real-world
+							problems and provide a great user experience.
 						</p>
 
 						<div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
