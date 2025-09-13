@@ -44,13 +44,15 @@ export const HeroSection = () => {
 						scalable, high-quality web applications. Over the past
 						three years, I have worked extensively with back-end
 						technologies like Node.js, Express, and databases
-						including MySQL and MongoDB.
+						including MySQL and MongoDB. I also specialize in DevOps practices, leveraging tools like Docker and Kubernetes to streamline deployment and ensure scalability.
 					</p>
 					<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">
 						With a strong foundation in computer science and a keen
 						interest in emerging technologies, I strive to create
 						efficient, scalable, and user-friendly applications that
-						solve real-world problems.
+						solve real-world problems. I am passionate about
+						collaborating with cross-functional teams to deliver
+						innovative solutions that drive business success.
 					</p>
 					<div className="opacity-0 animate-fade-in-delay-5">
 						<a href="#projects" className="cosmic-button">

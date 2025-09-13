@@ -43,18 +43,22 @@ export const ThemeToggle = ({
 
 		if (isDarkMode) {
 			document.documentElement.classList.remove("dark");
+			document.body.setAttribute("data-theme-mode", "light");
 			localStorage.setItem("theme", "light");
+			// Reduce timeout for faster state update
 			setTimeout(() => {
 				setIsDarkMode(false);
 				setIsTransitioning(false);
-			}, 300);
+			}, 150);
 		} else {
 			document.documentElement.classList.add("dark");
+			document.body.setAttribute("data-theme-mode", "dark");
 			localStorage.setItem("theme", "dark");
+			// Reduce timeout for faster state update
 			setTimeout(() => {
 				setIsDarkMode(true);
 				setIsTransitioning(false);
-			}, 300);
+			}, 150);
 		}
 	};
 

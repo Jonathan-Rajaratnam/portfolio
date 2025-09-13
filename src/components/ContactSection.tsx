@@ -49,7 +49,7 @@ export const ContactSection = () => {
 						<div className="space-y-6">
 							{/* Email Section */}
 							<div className="flex items-center justify-center">
-								<div className="flex items-center w-50">
+								<div className="flex items-center w-55">
 									<div className="w-6 flex justify-center mr-4">
 										<Mail className="h-5 w-5 text-primary" />
 									</div>
@@ -63,7 +63,7 @@ export const ContactSection = () => {
 
 							{/* Phone Section */}
 							<div className="flex items-center justify-center">
-								<div className="flex items-center w-50">
+								<div className="flex items-center w-55">
 									<div className="w-6 flex justify-center mr-4">
 										<Phone className="h-5 w-5 text-primary" />
 									</div>
@@ -77,12 +77,12 @@ export const ContactSection = () => {
 
 							{/* Location Section */}
 							<div className="flex items-center justify-center">
-								<div className="flex items-center w-50">
+								<div className="flex items-center w-55">
 									<div className="w-6 flex justify-center mr-4">
 										<MapPin className="h-5 w-5 text-primary" />
 									</div>
 									<span className="text-muted-foreground">
-										Colombo, Sri Lanka
+										London, United Kingdom
 									</span>
 								</div>
 							</div>
