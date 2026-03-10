@@ -68,9 +68,9 @@ export const ContactSection = () => {
 										<Phone className="h-5 w-5 text-primary" />
 									</div>
 									<a
-										href="tel:+947629364"
+										href="tel:+447895067452"
 										className="text-muted-foreground hover:text-primary transition-colors duration-300">
-										076 293 6764
+										+44 7895 067452
 									</a>
 								</div>
 							</div>
