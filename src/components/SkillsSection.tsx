@@ -232,10 +232,12 @@ const SkillCard = ({
       className="bg-card p-6 rounded-lg shadow-xs flex flex-col items-center w-20 h-20 md:w-28 md:h-28 relative group/skill cursor-pointer opacity-0 animate-fade-in"
       style={{
         animationDelay: `${index * 0.1}s`,
-        transition: "transform 0.4s ease-out, box-shadow 0.4s ease-out",
-        transform: isHovered ? "translateY(-3px)" : "none",
+        transitionProperty: "transform, box-shadow",
+        transitionDuration: "0.4s",
+        transitionTimingFunction: "ease-out",
+        transform: isHovered ? "translateY(-4px) scale(1.05)" : "none",
         boxShadow: isHovered
-          ? `0 6px 20px ${brandColor}25, 0 0 15px ${brandColor}15`
+          ? `0 8px 25px ${brandColor}30, 0 0 20px ${brandColor}20`
           : undefined,
       }}
     >
@@ -245,6 +247,10 @@ const SkillCard = ({
           className="text-4xl md:text-5xl flex items-center justify-center"
           style={{
             color: iconColors[skill.name],
+            transitionProperty: "transform",
+            transitionDuration: "0.4s",
+            transitionTimingFunction: "ease-out",
+            transform: isHovered ? "scale(1.1)" : "none",
           }}
         >
           {skill.icon}
