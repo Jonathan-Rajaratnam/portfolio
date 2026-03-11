@@ -4,17 +4,16 @@
  */
 export function applySafariTransitionFix() {
   // Check if browser is Safari
-  const isSafari = 
+  const isSafari =
     /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
     (navigator.userAgent.includes('AppleWebKit') && !navigator.userAgent.includes('Chrome'));
-  
+
   if (isSafari) {
     // Create a style element for Safari-specific fixes
     const style = document.createElement('style');
     style.textContent = `
       /* Safari-specific transition overrides */
       * {
-        -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
         -webkit-transition-duration: 0.1s, 0.3s, 0.3s, 0.3s, 0.1s, 0.1s !important;
         -webkit-transition-timing-function: ease !important;
       }
